@@ -1,0 +1,56 @@
+# Arquivos Python gerados
+__pycache__/
+*.pyc
+*.pyo
+
+# Arquivos de ambiente virtual
+venv/
+.venv/
+env/
+_venv/
+*.egg-info
+
+# Arquivos de banco de dados
+*.sqlite3
+*.db
+
+# Arquivos de log e cache
+*.log
+*.DS_Store
+*.swp
+*.swo
+*.diff
+*.dump
+*.patch
+
+# Arquivos estáticos e de mídia, dependendo da sua configuração
+static/*
+!static/.git # Se você tiver um .git dentro de static para submodules ou deploy
+media/*
+!media/.git  # Se você tiver um .git dentro de media para submodules ou deploy
+
+# Arquivos de pacotes e distribuição
+build/
+dist/
+wheels/
+*.egg
+*.whl
+
+# Arquivos de configuração específicos do sistema
+local_settings.py
+secrets.json
+.env
+.vscode/ # Se você usa VSCode e não quer compartilhar configurações workspace
+.idea/     # Se você usa IntelliJ IDEA e não quer compartilhar configurações do projeto
+
+# Pasta de arquivos de mídia do Bootstrap, se você estiver gerenciando localmente
+bootstrap/ # Se você baixou o Bootstrap localmente para o projeto
+
+# Outros arquivos temporários e de sistema
+*~
+*.bak
+*.tmp
+*.orig
+Thumbs.db
+ehthumbs.db
+.Trash
