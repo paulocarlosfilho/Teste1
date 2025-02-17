@@ -18,31 +18,41 @@
 
     <main class="container">
         <h1>Sua lista de Tarefas</h1>
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Título</th>
-                <th scope="col">Criado em</th>
-                <th scope="col">Data de Entrega</th>
-                <th scope="col">Finalizada em</th>
-				<th scope="col">Observações</th>
-              </tr>
-            </thead>
-            <tbody>
-                {% for tarefa in to_dos %}
-					<tr>
-						<th scope="row">{{tarefa.pk}}</th>
-						<td>{{ tarefa.title }}</td>
-						<td>{{ tarefa.created_at }}</td>
-						<td>{{ tarefa.deadline }}</td>
-						<td>{{ tarefa.finished_at }}</td>
-						<td>{{ tarefa.observacoes |default:"-" }}</td>
-					</tr>
-				{%endfor%}
-              
-            </tbody>
-          </table>
+        {% if to_dos%}
+			<table class="table">
+				<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Título</th>
+					<th scope="col">Criado em</th>
+					<th scope="col">Data de Entrega</th>
+					<th scope="col">Finalizada em</th>
+					<th scope="col">Observações</th>
+					<th scope="col">Ações</th>
+				</tr>
+				</thead>
+				<tbody>
+					{% for tarefa in to_dos %}
+						<tr>
+							<th scope="row">{{tarefa.pk}}</th>
+							<td>{{ tarefa.title }}</td>
+							<td>{{ tarefa.created_at }}</td>
+							<td>{{ tarefa.deadline }}</td>
+							<td>{{ tarefa.finished_at }}</td>
+							<td>{{ tarefa.observacoes |default:"-" }}</td>
+							<td>
+								<a href="#" class="btn btn-primary btn-sm">Concluir</a>
+								<a href="#" class="btn btn-warning btn-sm">Editar</a>
+								<a href="#" class="btn btn-danger btn-sm">Excluir</a>
+							</td>
+						</tr>
+					{%endfor%}
+				
+				</tbody>
+			</table>
+			{%else%}
+				<p>A sua lista está vazia...</p>
+		{% endif %}
     </main>
 
 
