@@ -1,7 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import To_do
 
-# Create your views here.
-
-def home(request):
-    return render(request, "to_do/home.html")
+def to_do_list(request):
+    to_do = To_do.objects.all()
+    return render(request, 'to_do/to_do_list.html', {"to_dos": to_do})
