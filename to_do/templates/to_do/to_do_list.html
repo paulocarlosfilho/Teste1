@@ -28,6 +28,7 @@
 				<td>{{ tarefa.finished_at }}</td>
 				<td>{{ tarefa.observacoes |default:"-" }}</td>
 				<td>
+					<a href="{% url 'to_do_complete' tarefa.pk %}" class="btn btn-primary btn-sm">Finalizar</a>
 					<a href="{% url 'to_do_update' tarefa.pk %}" class="btn btn-warning btn-sm">Editar</a>
 					<a href="{% url 'to_do_delete' tarefa.pk%}" class="btn btn-danger btn-sm">Excluir</a>
 				</td>
