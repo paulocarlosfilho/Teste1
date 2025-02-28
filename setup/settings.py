@@ -1,4 +1,4 @@
-
+import os
 from pathlib import Path
 from decouple import config, Csv
 import dj_database_url
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'setup.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'to_do', 'templates', 'downloads')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,6 +120,10 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
+
+# Media files (user uploads)
+MEDIA_URL = '/media/'  # URL pública para acessar os arquivos de mídia (uploads)
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # Caminho no sistema de arquivos onde os arquivos de mídia serão armazenados
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
