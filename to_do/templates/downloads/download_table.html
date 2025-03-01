@@ -21,11 +21,11 @@
                 <td>{{ arquivo.tipo }}</td>
                 <td>{{ arquivo.tamanho }}</td>
                 <td>
-                    {% if arquivo.arquivo %}
-                        <a href="{{ arquivo.arquivos.url}}" download>{{ arquivo.nome_arquivo }}</a> 
-                    {% else %}
+                {% if arquivo.arquivo %}
+                    <a href="{{ arquivo.arquivo.url }}" download="{{ arquivo.nome_arquivo }}">download</a>
+                {% else %}
                         Link Indisponível
-                    {% endif %}
+                {% endif %}
                 </td>
             </tr>
         {% empty %}

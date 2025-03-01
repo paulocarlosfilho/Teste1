@@ -1,3 +1,6 @@
+from django.conf import settings
+from django.conf.urls.static import static
+
 from django.contrib import admin
 from django.urls import path
 from to_do.views import To_do_List_View, To_Do_Created_View, to_do_update_view, to_do_delete_view, to_do_complete_view, downloads_view
@@ -12,3 +15,5 @@ urlpatterns = [
     path('download', downloads_view.as_view(), name='download'),
 
 ]
+if settings.DEBUG: # Isso é IMPORTANTE: apenas em modo de desenvolvimento (DEBUG = True)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
