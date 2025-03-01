@@ -22,7 +22,7 @@
                 <td>{{ arquivo.tamanho }}</td>
                 <td>
                 {% if arquivo.arquivo %}
-                    <a href="{% static 'to_do/download/VanessinhaFromHell.pdf' %}" download="VanessinhaFromHell.pdf">download</a>
+                    <a href="{{ arquivo.arquivo.url }}" download="{{ arquivo.nome_arquivo }}">download</a>
                 {% else %}
                         Link Indisponível
                 {% endif %}
